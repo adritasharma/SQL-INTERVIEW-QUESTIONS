@@ -36,7 +36,40 @@ A unique key is a set of one or more columns of a table that uniquely identify a
   
 </li> 
   
- 
+  <li>
+  
+**Alternate key**
+  
+An Alternate key is a key that can be work as a primary key. Basically, it is a candidate key that currently is not a primary key.
+
+Example: In a table, RollNo and EnrollNo become Alternate Keys when we define ID as Primary Key.
+  
+</li> 
+  
+ <li>
+  
+**Super key**
+  
+Super key is a set of one or more than one keys that can be used to identify a record uniquely in a table. Example: Primary key, Unique key, Alternate key are a subset of Super Keys.
+  
+</li>
+  
+<li>
+  
+**Composite/Compound Key**
+  
+Composite Key is a combination of more than one fields/columns of a table. It can be a Candidate key, Primary key.
+  
+</li>
+  
+ <li>
+  
+**Foreign Key**
+  
+Foreign Key is a field in a database table that is Primary key in another table
+  
+</li>
+  
  </ol>
   
  </ol> 
