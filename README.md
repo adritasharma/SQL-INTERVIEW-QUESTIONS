@@ -69,7 +69,24 @@ Composite Key is a combination of more than one fields/columns of a table. It ca
 Foreign Key is a field in a database table that is Primary key in another table
   
 </li>
-  
+    
  </ol>
+ 
+<li>
   
+**SQL oins**
+  
+ SQL Join statement is used to combine data or rows from two or more tables based on a common field between them.
+  
+  <ol>
+  <li>
+    
+    **Foreign Key**
+  
+Foreign Key is a field in a database table that is Primary key in another table
+    
+  </li> 
+  </ol> 
+  
+</li> 
  </ol> 
