@@ -74,16 +74,16 @@ Foreign Key is a field in a database table that is Primary key in another table
  
 <li>
   
-**SQL oins**
+**SQL Joins**
   
  SQL Join statement is used to combine data or rows from two or more tables based on a common field between them.
   
-  <ol>
+<ol>
   <li>
     
-    **Foreign Key**
+**INNER JOIN**
   
-Foreign Key is a field in a database table that is Primary key in another table
+The INNER JOIN keyword selects all rows from both the tables as long as the condition satisfies
     
   </li> 
   </ol> 
