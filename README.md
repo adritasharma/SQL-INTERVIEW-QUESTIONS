@@ -86,7 +86,32 @@ Foreign Key is a field in a database table that is Primary key in another table
 The INNER JOIN keyword selects all rows from both the tables as long as the condition satisfies
     
   </li> 
-  </ol> 
+  
+<li>
+    
+**LEFT JOIN**
+  
+The LEFT JOIN returns all the rows of the table on the left side of the join and matching rows for the table on the right side of join.
+    
+</li>
+  
+ <li>
+    
+**RIGHT JOIN**
+  
+The RIGHT JOIN returns all the rows of the table on the right side of the join and matching rows for the table on the left side of join
+    
+</li> 
+  
+  <li>
+    
+**FULL JOIN**
+  
+The FULL JOIN returns all the rows from both the tables. The rows for which there is no matching, the result-set will contain NULL
+    
+</li>  
+  
+</ol> 
   
 </li> 
  </ol> 
