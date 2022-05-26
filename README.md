@@ -182,7 +182,9 @@ SELECT cr.CountryName, ct.ContinentName
 FROM Country cr
 NATURAL JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
 ```  
-![image](https://user-images.githubusercontent.com/29271635/170478993-65d49f4b-72f3-434b-919e-6e290c9396b7.png)
+![image](https://user-images.githubusercontent.com/29271635/170480120-813cd4f9-0a8a-43e2-9b02-775d230d8f2a.png)
+
+
     
 
     
