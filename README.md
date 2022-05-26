@@ -78,13 +78,8 @@ Foreign Key is a field in a database table that is Primary key in another table
   
  SQL Join statement is used to combine data or rows from two or more tables based on a common field between them.
   
-  **Continent**                                                                                                      
-  
-  ![image](https://user-images.githubusercontent.com/29271635/170472125-8974a20e-df8c-48e7-aa86-85d40b50097e.png)       
-  
-  **Country**
-  
-  ![image](https://user-images.githubusercontent.com/29271635/170472210-fc7a9736-6a7a-41f3-8876-0117ee1a6126.png)
+![image](https://user-images.githubusercontent.com/29271635/170478784-2769facd-2d30-47e8-9e57-bbf932247de1.png)
+
 
 
   
@@ -163,7 +158,7 @@ Result:
 **CROSS JOIN**
   
 CROSS JOIN joins all the records from left table with all the records from right table. 
-It is not based on matching any column. ON is not required
+It is not based on matching any column. ON is not required.
 Result row count is number of records in left table multiplied by number of records in right table (Cartesian product)
     
 ```
@@ -174,6 +169,21 @@ CROSS JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
 Result:  
     
 ![image](https://user-images.githubusercontent.com/29271635/170476941-74177a58-6c2b-46f4-a07f-e352a274d1d0.png)
+
+  
+**NATURAL JOIN**
+  
+NATURAL JOIN is similar to INNER join but we do not need to use the ON clause during the join. 
+SQL joins two tables based on the common column name in these two tables.  
+Both tables must have columns with same name and  same data type. (eg: Here ContinentId)
+    
+```
+SELECT cr.CountryName, ct.ContinentName
+FROM Country cr
+NATURAL JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
+```  
+![image](https://user-images.githubusercontent.com/29271635/170478993-65d49f4b-72f3-434b-919e-6e290c9396b7.png)
+    
 
     
 </li> 
