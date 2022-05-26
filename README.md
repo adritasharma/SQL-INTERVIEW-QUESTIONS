@@ -157,7 +157,26 @@ Result:
 ![image](https://user-images.githubusercontent.com/29271635/170473671-526b6d46-c89c-47a8-90e5-21e412943bce.png)
     
 </li>  
+ 
+<li>
+    
+**CROSS JOIN**
   
+CROSS JOIN joins all the records from left table with all the records from right table. 
+It is not based on matching any column. ON is not required
+Result row count is number of records in left table multiplied by number of records in right table (Cartesian product)
+    
+```
+SELECT cr.CountryName, ct.ContinentName
+FROM Country cr
+CROSS JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
+```  
+Result:  
+    
+![image](https://user-images.githubusercontent.com/29271635/170476367-dcf9e737-4819-4066-9afa-37256a31ec9b.png)
+
+    
+</li> 
 </ol> 
   
 </li> 
