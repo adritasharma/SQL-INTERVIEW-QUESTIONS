@@ -173,7 +173,7 @@ CROSS JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
 ```  
 Result:  
     
-![image](https://user-images.githubusercontent.com/29271635/170476367-dcf9e737-4819-4066-9afa-37256a31ec9b.png)
+![image](https://user-images.githubusercontent.com/29271635/170476941-74177a58-6c2b-46f4-a07f-e352a274d1d0.png)
 
     
 </li> 
