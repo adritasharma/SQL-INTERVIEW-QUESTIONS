@@ -119,6 +119,7 @@ FROM Country cr
 LEFT JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
 ```  
 Result: 
+ 
 ![image](https://user-images.githubusercontent.com/29271635/170473458-44142a13-cd59-4a99-87bd-0411f8ef534c.png)
     
 </li>
@@ -134,7 +135,8 @@ SELECT cr.CountryName, ct.ContinentName
 FROM Country cr
 RIGHT JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
 ```  
-Result:  
+Result:
+   
 ![image](https://user-images.githubusercontent.com/29271635/170473559-785e16af-c732-4681-b27f-000a3ec805ef.png)
     
 </li> 
@@ -150,7 +152,8 @@ SELECT cr.CountryName, ct.ContinentName
 FROM Country cr
 FULL JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
 ```  
-Result:    
+Result:  
+    
 ![image](https://user-images.githubusercontent.com/29271635/170473671-526b6d46-c89c-47a8-90e5-21e412943bce.png)
     
 </li>  
