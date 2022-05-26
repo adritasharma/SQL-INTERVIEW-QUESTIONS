@@ -78,12 +78,31 @@ Foreign Key is a field in a database table that is Primary key in another table
   
  SQL Join statement is used to combine data or rows from two or more tables based on a common field between them.
   
+  **Continent**                                                                                                      
+  
+  ![image](https://user-images.githubusercontent.com/29271635/170472125-8974a20e-df8c-48e7-aa86-85d40b50097e.png)       
+  
+  **Country**
+  
+  ![image](https://user-images.githubusercontent.com/29271635/170472210-fc7a9736-6a7a-41f3-8876-0117ee1a6126.png)
+
+
+  
 <ol>
   <li>
     
 **INNER JOIN**
   
 The INNER JOIN keyword selects all rows from both the tables as long as the condition satisfies
+    
+```
+SELECT cr.CountryName, ct.ContinentName
+FROM Country cr
+INNER JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
+```  
+Result:
+    
+    
     
   </li> 
   
@@ -92,6 +111,13 @@ The INNER JOIN keyword selects all rows from both the tables as long as the cond
 **LEFT JOIN**
   
 The LEFT JOIN returns all the rows of the table on the left side of the join and matching rows for the table on the right side of join.
+  
+ ```
+SELECT cr.CountryName, ct.ContinentName
+FROM Country cr
+LEFT JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
+```  
+Result: 
     
 </li>
   
@@ -99,7 +125,14 @@ The LEFT JOIN returns all the rows of the table on the left side of the join and
     
 **RIGHT JOIN**
   
-The RIGHT JOIN returns all the rows of the table on the right side of the join and matching rows for the table on the left side of join
+The RIGHT JOIN returns all the rows of the table on the right side of the join and matching rows for the table on the left side of join.
+   
+ ```
+SELECT cr.CountryName, ct.ContinentName
+FROM Country cr
+RIGHT JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
+```  
+Result:  
     
 </li> 
   
@@ -108,6 +141,13 @@ The RIGHT JOIN returns all the rows of the table on the right side of the join a
 **FULL JOIN**
   
 The FULL JOIN returns all the rows from both the tables. The rows for which there is no matching, the result-set will contain NULL
+    
+```
+SELECT cr.CountryName, ct.ContinentName
+FROM Country cr
+FULL JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
+```  
+Result:    
     
 </li>  
   
