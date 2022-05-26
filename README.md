@@ -176,6 +176,8 @@ Result:
 NATURAL JOIN is similar to INNER join but we do not need to use the ON clause during the join. 
 SQL joins two tables based on the common column name in these two tables.  
 Both tables must have columns with same name and  same data type. (eg: Here ContinentId)
+  
+It is not allowed in MS SQL Server
     
 ```
 SELECT cr.CountryName, ct.ContinentName
