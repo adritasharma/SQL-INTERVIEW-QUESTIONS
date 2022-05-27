@@ -235,16 +235,28 @@ Result:
 
 **Difference between DELETE and TRUNCATE** 	
 	
-	<table>
-		<tr>
-			<td>Delete can be used to remove either few or all the records from a table</td>
-			<td>Truncate will always remove all the records from the table. Truncate cannot have WHERE condition</td>
-		</tr>
-		<tr>
-			<td>Delete is a DML statement hence we will need to commit the transaction in order to save the changes to database</td>
-			<td>Truncate is a DDL statement hence no commit is required</td>
-		</tr>
-	</table>	
+<table>
+	<tr>
+		<td>Delete can be used to remove either few or all the records from a table</td>
+		<td>Truncate will always remove all the records from the table. Truncate cannot have WHERE condition</td>
+	</tr>
+	<tr>
+		<td>Delete is a DML statement hence we will need to commit the transaction in order to save the changes to database</td>
+		<td>Truncate is a DDL statement hence no commit is required</td>
+	</tr>
+	<tr>
+		<td>Speed is slow because it maintains transaction logs for each deleted record.</td>
+		<td>It's execution is fast because it deletes entire data at a time without maintaining transaction logs.</td>
+	</tr>
+	<tr>
+		<td>Doesn't reset the table identity because it only deletes the data</td>
+		<td>It always resets the table identity.</td>
+	</tr>
+	<tr>
+		<td>Requires DELETE permission to use this command.</td>
+		<td>Requires ALTER permission to use this command.</td>
+	</tr>
+</table>	
 	
 
 
