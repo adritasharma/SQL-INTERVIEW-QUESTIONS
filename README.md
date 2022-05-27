@@ -170,7 +170,9 @@ Result:
     
 ![image](https://user-images.githubusercontent.com/29271635/170476941-74177a58-6c2b-46f4-a07f-e352a274d1d0.png)
 
-  
+</li>  
+ 
+<li>  
 **NATURAL JOIN**
   
 NATURAL JOIN is similar to INNER join but we do not need to use the ON clause during the join. 
@@ -189,9 +191,40 @@ Result:
   
  ![image](https://user-images.githubusercontent.com/29271635/170480512-d0964128-a944-4639-b7c6-7bc4f505c0ab.png)
 
+<li> 
+  
+**SELF JOIN**
+  
+SELF JOIN is when we join a table to itself. We just use the normal INNER/LEFT join to do a self join with the table having different alias name. 
 
+  ![image](https://user-images.githubusercontent.com/29271635/170652268-cf249825-1f61-4373-8378-a4d114c83bd5.png)
+
+  ```
+	SELECT
+		emp.EmployeeName as Employee,
+		mng.EmployeeName as Manager
+	FROM Employee emp 
+	JOIN Employee mng ON emp.ManagerId = mng.EmployeeId
+```  
+  
+Result:
+
+  ![image](https://user-images.githubusercontent.com/29271635/170652407-e4fae467-523c-42ea-b9ed-781cfa7e63d2.png)
+
+  
+  ```
+	SELECT
+		emp.EmployeeName as Employee,
+		mng.EmployeeName as Manager
+	FROM Employee emp 
+	LEFT JOIN Employee mng ON emp.ManagerId = mng.EmployeeId
+```  
+  
+Result:
+  
+ ![image](https://user-images.githubusercontent.com/29271635/170652316-3f60f1b5-df6c-48da-b7d0-2ceb76e6da56.png)
     
-
+  </li>
     
 </li> 
 </ol> 
