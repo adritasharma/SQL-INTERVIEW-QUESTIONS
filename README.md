@@ -233,6 +233,14 @@ Result:
 
 <li>
 
+**Difference between DROP and DELETE/TRUNCATE** 
+	
+DROP is used to remove the entire table screma from the DB whereas DELETE/TRUNCATE is used to only remove records	
+
+</li>
+
+<li>
+
 **Difference between DELETE and TRUNCATE** 	
 	
 <table>
