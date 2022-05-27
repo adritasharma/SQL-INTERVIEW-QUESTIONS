@@ -172,7 +172,8 @@ Result:
 
 </li>  
  
-<li>  
+<li> 
+	
 **NATURAL JOIN**
   
 NATURAL JOIN is similar to INNER join but we do not need to use the ON clause during the join. 
@@ -228,6 +229,24 @@ Result:
     
 </li> 
 </ol> 
-  
 </li> 
+
+<li>
+
+**Difference between DELETE and TRUNCATE** 	
+	
+	<table>
+		<tr>
+			<td>Delete can be used to remove either few or all the records from a table</td>
+			<td>Truncate will always remove all the records from the table. Truncate cannot have WHERE condition</td>
+		</tr>
+		<tr>
+			<td>Delete is a DML statement hence we will need to commit the transaction in order to save the changes to database</td>
+			<td>Truncate is a DDL statement hence no commit is required</td>
+		</tr>
+	</table>	
+	
+
+
+
  </ol> 
