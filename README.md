@@ -272,11 +272,41 @@ DROP is used to remove the entire table screma from the DB whereas DELETE/TRUNCA
 
 **Difference between UNION and UNION ALL** 
 
-- The SQL UNION clause/operator is used to combine the results of two or more SELECT statements without returning any duplicate rows.
+UNION and UNION ALL are SQL operators used to concatenate 2 or more result sets. This allows us to write multiple SELECT statements, retrieve the desired results, then combine them together into a final, unified set.
+
+The main difference between UNION and UNION ALL is that:
+
+- **UNION**: only keeps unique records
+- **UNION ALL**: keeps all records, including duplicates
 	
 ![image](https://user-images.githubusercontent.com/29271635/174777799-af0138e2-847c-4e1f-aad3-f15a88aad4d6.png)
 
 	
 ![image](https://user-images.githubusercontent.com/29271635/174777914-bb59030a-42d9-4745-8af4-14654faece6b.png)
+	
+```
+	SELECT City FROM Student  
+	UNION  
+	SELECT City FROM Teacher  
+	ORDER BY City;  
+	
+```
+  
+Result:
+	
+![image](https://user-images.githubusercontent.com/29271635/174778885-43b5b901-b485-4f24-a321-2a6aa43ca548.png)
+	
+```
+	SELECT City FROM Student  
+	UNION ALL
+	SELECT City FROM Teacher  
+	ORDER BY City;  
+	
+```
+  
+Result:
+	
+![image](https://user-images.githubusercontent.com/29271635/174779067-6c6171ad-8fb5-4a0c-b98e-0b9675a719f3.png)
+
 	
  </ol> 
