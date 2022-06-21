@@ -164,7 +164,7 @@ Result row count is number of records in left table multiplied by number of reco
 ```
 SELECT cr.CountryName, ct.ContinentName
 FROM Country cr
-CROSS JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
+CROSS JOIN  Continent ct ;
 ```  
 Result:  
     
