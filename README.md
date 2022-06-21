@@ -273,4 +273,10 @@ DROP is used to remove the entire table screma from the DB whereas DELETE/TRUNCA
 **Difference between UNION and UNION ALL** 
 
 - The SQL UNION clause/operator is used to combine the results of two or more SELECT statements without returning any duplicate rows.
+	
+![image](https://user-images.githubusercontent.com/29271635/174777799-af0138e2-847c-4e1f-aad3-f15a88aad4d6.png)
+
+	
+![image](https://user-images.githubusercontent.com/29271635/174777914-bb59030a-42d9-4745-8af4-14654faece6b.png)
+	
  </ol> 
