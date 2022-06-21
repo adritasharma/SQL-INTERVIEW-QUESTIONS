@@ -185,7 +185,7 @@ It is not allowed in MS SQL Server
 ```
 SELECT cr.CountryName, ct.ContinentName
 FROM Country cr
-NATURAL JOIN  Continent ct ON ct.ContinentId = cr.ContinentId;
+NATURAL JOIN  Continent ct
 ```  
   
 Result:
