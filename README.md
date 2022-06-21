@@ -308,5 +308,30 @@ Result:
 	
 ![image](https://user-images.githubusercontent.com/29271635/174779067-6c6171ad-8fb5-4a0c-b98e-0b9675a719f3.png)
 
+<li> 
+
+**Window functions in SQL**
 	
- </ol> 
+Window functions applies aggregate and ranking functions over a particular window (set of rows). OVER clause is used with window functions to define that window. OVER clause does two things : 
+
+- Partitions rows into form set of rows. (PARTITION BY clause is used) 
+- Orders rows within those partitions into a particular order. (ORDER BY clause is used) 	
+	
+Basic Syntax :  
+
+	SELECT coulmn_name1, 
+	 window_function(cloumn_name2),
+	 OVER([PARTITION BY column_name1] [ORDER BY column_name3]) AS new_column
+	FROM table_name;
+
+
+	window_function= any aggregate or ranking function    
+	column_name1= column to be selected
+	coulmn_name2= column on which window function is to be applied
+	column_name3= column on whose basis partition of rows is to be done
+	new_column= Name of new column
+	table_name= Name of table	
+	
+</li>	
+	
+</ol> 
