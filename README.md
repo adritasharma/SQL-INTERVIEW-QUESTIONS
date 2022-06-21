@@ -285,10 +285,10 @@ The main difference between UNION and UNION ALL is that:
 ![image](https://user-images.githubusercontent.com/29271635/174777914-bb59030a-42d9-4745-8af4-14654faece6b.png)
 	
 ```
-	SELECT City FROM Student  
-	UNION  
-	SELECT City FROM Teacher  
-	ORDER BY City;  
+SELECT City FROM Student  
+UNION  
+SELECT City FROM Teacher  
+ORDER BY City;  
 	
 ```
   
@@ -297,10 +297,10 @@ Result:
 ![image](https://user-images.githubusercontent.com/29271635/174778885-43b5b901-b485-4f24-a321-2a6aa43ca548.png)
 	
 ```
-	SELECT City FROM Student  
-	UNION ALL
-	SELECT City FROM Teacher  
-	ORDER BY City;  
+SELECT City FROM Student  
+UNION ALL
+SELECT City FROM Teacher  
+ORDER BY City;  
 	
 ```
   
