@@ -373,12 +373,35 @@ Output:
 </li>	
 
 <li>
-	**SubQuery/ WITH**
+	
+**SubQuery/ WITH**
+	
 </li>
 <li>
-	**CTE**
+	
+**CTE**
+	
 </li>
 <li>
-	**Merge**
+	
+**Merge**
+	
+</li>
+
+<li>
+	
+**Index**
+	
+SQL Indexes are used in relational databases to quickly retrieve data. They are similar to indexes at the end of the books whose purpose is to find a topic quickly.
+The existence of the right indexes, can drastically improve the performance of the query.
+	
+- Data is internally stored in a SQL Server database in “pages” where the size of each page is 8KB.
+	
+- A continuous 8 pages is called an “Extent”.
+	
+- When we create the table then one extent will be allocated for two tables and when that extent is is filled with the data then another extent will be allocated and this extent may or may not be continuous to the first extent.	
+	
+-  If there is no index, then the query engine, checks every row in the table from the beginning to the end. This is called as **Table Scan**. Table scan is bad for performance	
+	
 </li>
 </ol> 
