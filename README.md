@@ -342,10 +342,10 @@ Ranking functions are, RANK(), DENSE_RANK(), ROW_NUMBER()
 **RANK()** function will assign a rank to each row within each partitioned result set. If multiple rows have the same value then each of these rows will share the same rank. However the rank of the following (next) rows will get skipped. Meaning for each duplicate row, one rank value gets skipped.
 Rank is assigned such that rank 1 given to the first row and rows having same value are assigned same rank.	
 	
-**DENSE_RANK(**) assigns rank to each row within partition. Just like rank function first row is assigned rank 1 and rows having same value have same rank. 
+**DENSE_RANK()** assigns rank to each row within partition. Just like rank function first row is assigned rank 1 and rows having same value have same rank. 
 The difference between RANK() and DENSE_RANK() is that in DENSE_RANK(), for the next rank after two same rank, consecutive integer is used, no rank is skipped.
 	
-ROW_NUMBER()**** assigns consecutive integers to all the rows within partition. Within a partition, no two rows can have same row number. 	
+**ROW_NUMBER()** assigns consecutive integers to all the rows within partition. Within a partition, no two rows can have same row number. 	
 	
 </li>	
 </ol> 
