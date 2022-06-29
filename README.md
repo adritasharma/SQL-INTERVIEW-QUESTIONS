@@ -335,6 +335,9 @@ Basic Syntax :
 	
 <ol>
 <li>	
+ **Aggregate Window Functions** : 
+</li>		
+<li>	
 	
 **Ranking Window Functions** : 
 	
@@ -368,4 +371,14 @@ Output:
 </ol> 
 	
 </li>	
+
+<li>
+	**SubQuery/ WITH**
+</li>
+<li>
+	**CTE**
+</li>
+<li>
+	**Merge**
+</li>
 </ol> 
