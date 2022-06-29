@@ -335,6 +335,7 @@ Basic Syntax :
 	
 <ol>
 <li>	
+	
 **Ranking Window Functions** : 
 	
 Ranking functions are, RANK(), DENSE_RANK(), ROW_NUMBER() 
@@ -345,7 +346,23 @@ Rank is assigned such that rank 1 given to the first row and rows having same va
 **DENSE_RANK()** assigns rank to each row within partition. Just like rank function first row is assigned rank 1 and rows having same value have same rank. 
 The difference between RANK() and DENSE_RANK() is that in DENSE_RANK(), for the next rank after two same rank, consecutive integer is used, no rank is skipped.
 	
-**ROW_NUMBER()** assigns consecutive integers to all the rows within partition. Within a partition, no two rows can have same row number. 	
+**ROW_NUMBER()** assigns consecutive integers to all the rows within partition. Within a partition, no two rows can have same row number.
+	
+**ApplicationIssue**
+	
+![image](https://user-images.githubusercontent.com/29271635/176471885-a51d4898-7881-46a1-b938-e107a20a57b2.png)
+
+	
+	SELECT *,
+	  RANK() OVER(ORDER BY IssueCount DESC) AS ranks,
+	  DENSE_RANK() OVER(ORDER BY IssueCount DESC) AS dense_ranks,
+	  ROW_NUMBER() OVER(ORDER BY IssueCount DESC) AS row_numbers
+	FROM ApplicationIssue;
+
+Output:
+	
+![image](https://user-images.githubusercontent.com/29271635/176472370-91184d8f-6da3-4a7a-87c6-923991533215.png)
+
 	
 </li>	
 </ol> 
