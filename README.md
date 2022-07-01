@@ -422,6 +422,12 @@ To create an index on Salary column :
 
 	CREATE Index IX_EmployeeSalary_Salary 
 	ON EmployeeSalary (SALARY ASC)	
+									  
+The index stores salary of each employee, in the ascending order as shown below. The actual index may look slightly different.					
+									  
+![image](https://user-images.githubusercontent.com/29271635/176872143-970d499c-6ce7-41a3-abf8-02b79adc913d.png)
+
+Now, when the SQL server has to execute the same query, it has an index on the salary column to help this query. Salaries between the range of 3000 and 7000 are usually present at the bottom, since the salaries are arranged in an ascending order. SQL server picks up the row addresses from the index and directly fetch the records from the table, rather than scanning each row in the table. This is called as **Index Seek**.
 	
 To view all index of a table :								  
 
