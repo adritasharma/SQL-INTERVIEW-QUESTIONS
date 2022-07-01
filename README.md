@@ -433,9 +433,31 @@ To view all index of a table :
 
 	sp_Helpindex EmployeeSalary
 									  
+To delete or drop the index:
+									 
+	Drop Index EmployeeSalary.IX_EmployeeSalary
+								  
+									  
 Output:	
 									  
 ![image](https://user-images.githubusercontent.com/29271635/176871217-a4052de4-faad-436e-9ea3-cdbc5a0872d8.png)
+									  
+**Different types of indexes**	
+
+1. Clustered
+2. Nonclustered
+3. Unique
+4. Filtered
+5. XML
+6. Full Text
+7. Spatial
+8. Columnstore
+9. Index with included columns
+10. Index on computed columns
+									  
+**Clustered Index:**
+									  
+A clustered index determines the physical order of data in a									  
 									  
 </li>
 </ol> 
