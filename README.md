@@ -407,7 +407,22 @@ The existence of the right indexes, can drastically improve the performance of t
 	
 - When we create the table then one extent will be allocated for two tables and when that extent is is filled with the data then another extent will be allocated and this extent may or may not be continuous to the first extent.	
 	
--  If there is no index, then the query engine, checks every row in the table from the beginning to the end. This is called as **Table Scan**. Table scan is bad for performance	
+-  If there is no index, then the query engine, checks every row in the table from the beginning to the end. This is called as **Table Scan**. Table scan is bad for performance
+	
+**Index Example**:
+	
+![image](https://user-images.githubusercontent.com/29271635/176835407-ef939e9f-825b-4aec-b201-f0b871d2ed38.png)
+	
+At the moment, the table, does not have an index on SALARY column. Considering the following query:
+	
+	Select * from EmployeeSalary where Salary > 3000 and Salary < 7000	
+									  
+The query engine has to check each and every row in the table, resulting in a table scan, which can adversely affect the performance, especially if the table is large.	
+To create an index on Salary column :								  
+
+	CREATE Index IX_EmployeeSalary_Salary 
+	ON EmployeeSalary (SALARY ASC)	
+	
 	
 </li>
 </ol> 
