@@ -423,6 +423,13 @@ To create an index on Salary column :
 	CREATE Index IX_EmployeeSalary_Salary 
 	ON EmployeeSalary (SALARY ASC)	
 	
-	
+To view all index of a table :								  
+
+	sp_Helpindex EmployeeSalary
+									  
+Output:	
+									  
+![image](https://user-images.githubusercontent.com/29271635/176871217-a4052de4-faad-436e-9ea3-cdbc5a0872d8.png)
+									  
 </li>
 </ol> 
