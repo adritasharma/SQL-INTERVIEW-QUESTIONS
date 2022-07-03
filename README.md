@@ -468,11 +468,20 @@ Primary key, constraint create clustered indexes automatically if no clustered i
 
 Inspite, of inserting the rows in a random order, when we execute the select query we can see that all the rows in the table are arranged in an ascending order based on the Id column 	
 									  
-**Deleting Index:**
+**Deleting Clustered Index:**
 									  
 Drop index tblEmployee.PK__tblEmplo__3214EC070A9D95DB
 
 When you execute this query, you get an error message stating 'An explicit DROP INDEX is not allowed on index 'tblEmployee.PK__tblEmplo__3214EC070A9D95DB'. It is being used for PRIMARY KEY constraint enforcement.'
-To successfully delete the clustered index, right click on the index in the Object explorer window and select DELETE.									  
+To successfully delete the clustered index, right click on the index in the Object explorer window and select DELETE.		
+									  
+**Composite clustered Index** 	
+
+A table can have only one clustered index. However, the index can contain multiple columns (a composite index)	
+									  
+	Create Clustered Index IX_tblEmployee_Gender_Salary
+	ON tblEmployee(Gender DESC, Salary ASC)
+
+select query against this table you should see the data physically arranged, FIRST by Gender in descending order and then by Salary in ascending order.									  
 </li>
 </ol> 
