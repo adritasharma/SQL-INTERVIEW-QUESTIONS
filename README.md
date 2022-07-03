@@ -482,6 +482,9 @@ A table can have only one clustered index. However, the index can contain multip
 	Create Clustered Index IX_tblEmployee_Gender_Salary
 	ON tblEmployee(Gender DESC, Salary ASC)
 
-select query against this table you should see the data physically arranged, FIRST by Gender in descending order and then by Salary in ascending order.									  
+select query against this table you should see the data physically arranged, FIRST by Gender in descending order and then by Salary in ascending order.			
+**Non Clustered Index:**
+									  
+In a nonclustered index, the data is stored in one place, the index in another place. The index will have pointers to the storage location of the data. Since, the nonclustered index is stored separately from the actual data, a table can have more than one non clustered index,									  
 </li>
 </ol> 
