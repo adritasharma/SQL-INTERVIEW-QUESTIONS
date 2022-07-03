@@ -457,7 +457,22 @@ Output:
 									  
 **Clustered Index:**
 									  
-A clustered index determines the physical order of data in a									  
+A clustered index determines the physical order of data in a table based on which data will be arranged. A table can have only one clustered index						  
+Primary key, constraint create clustered indexes automatically if no clustered index already exists on the table 	
 									  
+	Insert into EmployeeSalary Values(3,'John',4500)
+	Insert into EmployeeSalary Values(1,'Sam',2500)
+	Insert into EmployeeSalary Values(4,'Sara',5500)
+	Insert into EmployeeSalary Values(5,'Todd',3100)
+	Insert into EmployeeSalary Values(2,'Pam',6500)									  
+
+Inspite, of inserting the rows in a random order, when we execute the select query we can see that all the rows in the table are arranged in an ascending order based on the Id column 	
+									  
+**Deleting Index:**
+									  
+Drop index tblEmployee.PK__tblEmplo__3214EC070A9D95DB
+
+When you execute this query, you get an error message stating 'An explicit DROP INDEX is not allowed on index 'tblEmployee.PK__tblEmplo__3214EC070A9D95DB'. It is being used for PRIMARY KEY constraint enforcement.'
+To successfully delete the clustered index, right click on the index in the Object explorer window and select DELETE.									  
 </li>
 </ol> 
