@@ -545,6 +545,18 @@ The overall OUTPUT is:
 **Merge**
 	
 </li>
+
+<li>
+	
+**PIVOT and UNPIVOT**
+
+- **PIVOT** operator converts the rows data of the table into the column data.
+
+We have a table Course
+
+- **UNPIVOT** transforms the column based data into rows
+	
+</li>
 <li>
 	
 **Performance Tuning**
