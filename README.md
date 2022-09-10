@@ -470,7 +470,7 @@ Inspite, of inserting the rows in a random order, when we execute the select que
 									  
 **Deleting Clustered Index:**
 									  
-Drop index tblEmployee.PK__tblEmplo__3214EC070A9D95DB
+	Drop index tblEmployee.PK__tblEmplo__3214EC070A9D95DB
 
 When you execute this query, you get an error message stating 'An explicit DROP INDEX is not allowed on index 'tblEmployee.PK__tblEmplo__3214EC070A9D95DB'. It is being used for PRIMARY KEY constraint enforcement.'
 To successfully delete the clustered index, right click on the index in the Object explorer window and select DELETE.		
@@ -483,8 +483,26 @@ A table can have only one clustered index. However, the index can contain multip
 	ON tblEmployee(Gender DESC, Salary ASC)
 
 select query against this table you should see the data physically arranged, FIRST by Gender in descending order and then by Salary in ascending order.			
+
 **Non Clustered Index:**
 									  
 In a nonclustered index, the data is stored in one place, the index in another place. The index will have pointers to the storage location of the data. Since, the nonclustered index is stored separately from the actual data, a table can have more than one non clustered index,									  
 </li>
+
+<li>
+
+**Execution Plan**
+
+Execution plan in SQL Server Management Studio is a graphical representation of the various steps that are involved in fetching results from the database tables. Once a query is executed, the query processing engine quickly generates multiple execution plans and selects the one which returns the results with the best performance. 
+
+There are two types of execution plans –
+
+**Estimated Execution Plan** 
+
+It is just a guess by the query processor about how the specific steps that are to be involved while returning the results. It is  generated before the query has been executed.
+
+**Actual Execution Plan** 
+
+It is generated after the query has been executed. It shows the actual operations and steps involved while executing the query. This may or may not differ from the Estimated Execution Plan
+
 </ol> 
