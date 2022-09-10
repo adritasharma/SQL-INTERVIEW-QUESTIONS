@@ -533,6 +533,11 @@ Here the CTE output is following, the output is joines with Department.
 
 ![image](https://user-images.githubusercontent.com/29271635/189490188-cfbd86b5-408a-4bda-b149-ea581ef1613b.png)
 
+The overall OUTPUT is:
+	
+![image](https://user-images.githubusercontent.com/29271635/189490349-d8f51cf6-c02c-488f-9fa6-c71ee54bda5d.png)
+	
+	
 	
 </li>
 <li>
