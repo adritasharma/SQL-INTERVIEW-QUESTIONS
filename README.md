@@ -376,6 +376,34 @@ Output:
 	
 **SubQuery/ WITH**
 	
+Subquery means query within a query. It should return single scalar value.
+	
+- Breakdown complex logic
+- Use in places where joins aren' tallowed (Joins are faster)
+- SQL server frequently rewrites subqueries as join. We can use subquery for better readability
+	
+We can put subquery in:
+	
+**SELECT line :**
+	
+	SELECT
+		ProductName,
+		Price,
+		Price - (SELECT AVG(Price) FROM Product) as DifferenceFromAverage
+	FROM Product	
+	
+
+**WHERE line :**
+	
+	SELECT
+		ProductName,
+		Price
+	FROM Product
+	WHERE
+		ProductId IN (SELECT ProductId FROM DaiyProductOffer)
+	
+**FROM line :**	
+	
 </li>
 <li>
 	
