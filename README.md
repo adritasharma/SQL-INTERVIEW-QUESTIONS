@@ -308,7 +308,49 @@ Result:
 	
 ![image](https://user-images.githubusercontent.com/29271635/174779067-6c6171ad-8fb5-4a0c-b98e-0b9675a719f3.png)
 
+
+<li>
+
+## AGGREGATE FUNCTIONS
+
+- **AVERAGE**
+
+NULL is ignored. In both the cased the items are divided by 3 and threfore same result 2.
+
+	CREATE TABLE #ITEMS (Num INT)
+
+	INSERT INTO #ITEMS VALUES (1), (2) , (3)  
+
+	SELECT
+		AVG(Num) 
+	FROM #ITEMS
+
+	TRUNCATE table #ITEMS
+
+	INSERT INTO #ITEMS VALUES (1), (2) ,(null), (3)  
+
+	SELECT
+		AVG(Num) 
+	FROM #ITEMS
+
+- **SUM**
+
+- **MIN**
+
+- **MAX**
+
+- **COUNT**
+
+
+
+**GROUP BY**
+
+
+</li>
+
 <li> 
+
+
 
 **Window functions in SQL**
 	
@@ -403,6 +445,27 @@ We can put subquery in:
 		ProductId IN (SELECT ProductId FROM DaiyProductOffer)
 	
 **FROM line :**	
+
+**Predicates Used with Subqueries**
+
+- IN
+
+- EXISTS (EXISTS is faster than IN)
+
+	SELECT
+		ProductName,
+		Price
+	FROM Product AS P
+	WHERE
+		EXISTS (SELECT ProductId 
+					FROM DaiyProductOffer offer
+				WHERE offer.ProductId = p.ProductId	)
+
+- ALL
+
+- ANY
+
+- SOME
 	
 </li>
 <li>
@@ -534,3 +597,9 @@ It is just a guess by the query processor about how the specific steps that are 
 It is generated after the query has been executed. It shows the actual operations and steps involved while executing the query. This may or may not differ from the Estimated Execution Plan
 
 </ol> 
+
+## QUERY Performance Improvement
+
+- EXISTS is faster than IN
+
+
