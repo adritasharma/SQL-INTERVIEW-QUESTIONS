@@ -504,7 +504,12 @@ A CTE is a temporary result set, that can be referenced within a SELECT, INSERT,
 
 **Requirement**:
 
-Get Employee count in each department.
+We have Employee and Department tables:
+
+![image](https://user-images.githubusercontent.com/29271635/189490100-327fb7ce-bad9-4852-801c-632f5401acdd.png)
+
+
+**Get Employee count in each department**.
 
 	WITH EmployeeCount(DepartmentId, TotalEmployees)
 	as
@@ -523,6 +528,10 @@ Get Employee count in each department.
 	JOIN EmployeeCount cnt
 	on d.DepartmentId = cnt.DepartmentId
 
+
+Here the CTE output is following, the output is joines with Department.
+
+![image](https://user-images.githubusercontent.com/29271635/189490188-cfbd86b5-408a-4bda-b149-ea581ef1613b.png)
 
 	
 </li>
