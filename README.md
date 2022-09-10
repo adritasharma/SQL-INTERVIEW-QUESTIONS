@@ -311,6 +311,10 @@ Result:
 
 <li>
 
+**Window functions in SQL**
+
+Window functions applies aggregate and ranking functions over a particular window (set of rows).
+
 ## AGGREGATE FUNCTIONS
 
 - **AVERAGE**
@@ -342,17 +346,31 @@ NULL is ignored. In both the cased the items are divided by 3 and threfore same 
 - **COUNT**
 
 
+- **GROUP BY**
 
-**GROUP BY**
+The GROUP BY statement groups rows that have the same values into summary rows. It is mostly used when the user request needs "by"
+or "for each"
+
+	SELECT 
+		e.DepartmentId,
+		MAX(d.DepartmentName) as DepartmentName,
+		Count(*) AS EmpCount
+	FROM Employee e
+	JOIN Department d on e.DepartmentId = d.DepartmentId
+	GROUP BY e.DepartmentId
+
+Example:
+
+- Total sales **by** product category
+- Average sale **for each** customer
+- 
+
+**ROLL UP**
 
 
-</li>
-
-<li> 
 
 
-
-**Window functions in SQL**
+## Ranking Window Functions
 	
 Window functions applies aggregate and ranking functions over a particular window (set of rows). OVER clause is used with window functions to define that window. OVER clause does two things : 
 
@@ -376,12 +394,10 @@ Basic Syntax :
 	
 	
 <ol>
-<li>	
- **Aggregate Window Functions** : 
-</li>		
+	
 <li>	
 	
-**Ranking Window Functions** : 
+**Ranking** : 
 	
 Ranking functions are, RANK(), DENSE_RANK(), ROW_NUMBER() 
 	
@@ -470,7 +486,44 @@ We can put subquery in:
 </li>
 <li>
 	
-**CTE**
+**Common table expression (CTE)**
+
+A CTE is a temporary result set, that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement, that immediately follows the CTE.
+
+- Breakdown complex queries
+- Avoid subqueries
+- Simplify certain syntax
+
+**Syntax**
+
+
+	WITH cte_name (Column1, Column2, ..)
+	AS
+	( CTE_query )
+
+
+**Requirement**:
+
+Get Employee count in each department.
+
+	WITH EmployeeCount(DepartmentId, TotalEmployees)
+	as
+	(
+		SELECT 
+			DepartmentId, 
+			COUNT(*) as TotalEmployees
+		FROM Employee
+		GROUP BY DepartmentId
+	)
+
+	SELECT
+		d.DepartmentName, 
+		cnt.TotalEmployees
+	FROM Department d
+	JOIN EmployeeCount cnt
+	on d.DepartmentId = cnt.DepartmentId
+
+
 	
 </li>
 <li>
