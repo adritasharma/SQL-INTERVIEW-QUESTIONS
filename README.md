@@ -553,6 +553,20 @@ The overall OUTPUT is:
 - **PIVOT** operator converts the rows data of the table into the column data.
 
 We have a table Course
+	
+![image](https://user-images.githubusercontent.com/29271635/189491163-f04395d7-533c-44eb-993e-1e1128ae56b8.png)
+	
+	SELECT CourseName, PROGRAMMING, INTERVIEWPREPARATION
+	FROM Course 
+	PIVOT 
+	( 
+		SUM(Price) FOR CourseCategory IN (PROGRAMMING, INTERVIEWPREPARATION ) 
+	) AS PivotTable 	
+
+Output:
+
+![image](https://user-images.githubusercontent.com/29271635/189491209-89542166-df5c-4a40-b7e6-ffea90abb72e.png)
+
 
 - **UNPIVOT** transforms the column based data into rows
 	
