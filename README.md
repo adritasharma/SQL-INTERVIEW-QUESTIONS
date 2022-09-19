@@ -677,8 +677,109 @@ It is generated after the query has been executed. It shows the actual operation
 
 </ol> 
 
+## Common SQL Queries
+
+<ol>
+
+<li>
+
+**Find and Delete Duplicate records from a table**
+
+| CustomerId | FirstName | LastName    | Email                        |  
+| ---------- | --------- | ----------- | ---------------------------- | 
+| 1          | Adrita    | Sharma      | adritasharma@gmail.com       |
+| 2          | Sounak    | Chakraborty | chakraborty.sounak@gmail.com |
+| 3          | Deepika   | Das         | das.deepika31@gmail.com      |
+| 4          | Ankita    | Sarkar      | ankitasarkar1994@gmail.com   |
+| 5          | Anurag    | Shyam       | anurag1994@gmail.com         |
+| 6          | Sounak    | Chakraborty | chakraborty.sounak@gmail.com |
+| 7          | Deepika   | Das         | das.deepika31@gmail.com      |
+
+
+A) USING SELF JOIN
+
+Finding duplicate rows:
+
+	SELECT *
+	FROM
+		CUSTOMER C1
+		JOIN CUSTOMER C2 ON C1.Email = C2.Email
+	WHERE 
+		C2.CustomerId > C1.CustomerId
+
+Deleting duplicate rows:
+
+	DELETE C2
+	FROM
+		CUSTOMER C1
+		JOIN CUSTOMER C2 ON C1.Email = C2.Email
+	WHERE 
+		C2.CustomerId > C1.CustomerId
+
+
+B) USING GROUP BY
+
+Finding duplicate rows:
+
+	SELECT 
+		Email, Count(*) as Cnt
+	FROM CUSTOMER
+	GROUP BY Email
+	HAVING Count(*) > 1
+
+Deleting duplicate rows:
+
+	DELETE FROM CUSTOMER
+	WHERE 
+		CustomerId IN (
+			SELECT 
+				Max(CustomerId)
+			FROM CUSTOMER
+			GROUP BY Email
+			HAVING Count(*) > 1
+		)
+
+C) USING ROW_NUMBER() & PARTITION BY -- Used when there is no Primary Key Id
+
+Finding duplicate rows:
+
+	SELECT 
+        Email,
+        ROW_NUMBER() OVER (
+            PARTITION BY 
+               Email
+            ORDER BY 
+               Email
+        ) row_num
+     FROM 
+        CUSTOMER
+
+Deleting duplicate rows:	
+
+	WITH cte AS (
+		SELECT 
+			Email,
+			ROW_NUMBER() OVER (
+				PARTITION BY 
+				Email
+				ORDER BY 
+				Email
+			) row_num
+		FROM 
+			CUSTOMER
+	)
+	DELETE FROM cte WHERE row_num > 1;
+
+</li>
+
+
+</ol>
+
 ## QUERY Performance Improvement
 
 - EXISTS is faster than IN
+
+
+
 
 
