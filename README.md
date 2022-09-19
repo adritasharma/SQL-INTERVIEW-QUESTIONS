@@ -710,9 +710,9 @@ It is generated after the query has been executed. It shows the actual operation
 | 7          | Deepika   | Das         | das.deepika31@gmail.com      |
 
 
-A) USING SELF JOIN
+### A) USING **SELF JOIN**
 
-Finding duplicate rows:
+**Finding duplicate rows:**
 
 	SELECT *
 	FROM
@@ -721,7 +721,7 @@ Finding duplicate rows:
 	WHERE 
 		C2.CustomerId > C1.CustomerId
 
-Deleting duplicate rows:
+**Deleting duplicate rows:**
 
 	DELETE C2
 	FROM
@@ -731,9 +731,9 @@ Deleting duplicate rows:
 		C2.CustomerId > C1.CustomerId
 
 
-B) USING GROUP BY
+### B) USING **GROUP BY**
 
-Finding duplicate rows:
+**Finding duplicate rows:**
 
 	SELECT 
 		Email, Count(*) as Cnt
@@ -741,7 +741,7 @@ Finding duplicate rows:
 	GROUP BY Email
 	HAVING Count(*) > 1
 
-Deleting duplicate rows:
+**Deleting duplicate rows:**
 
 	DELETE FROM CUSTOMER
 	WHERE 
@@ -753,9 +753,9 @@ Deleting duplicate rows:
 			HAVING Count(*) > 1
 		)
 
-C) USING ROW_NUMBER() & PARTITION BY -- Used when there is no Primary Key Id
+### C) USING **ROW_NUMBER()** & PARTITION BY -- Used when there is no Primary Key Id
 
-Finding duplicate rows:
+**Finding duplicate rows:**
 
 	SELECT 
         Email,
@@ -768,7 +768,7 @@ Finding duplicate rows:
      FROM 
         CUSTOMER
 
-Deleting duplicate rows:	
+**Deleting duplicate rows:**	
 
 	WITH cte AS (
 		SELECT 
