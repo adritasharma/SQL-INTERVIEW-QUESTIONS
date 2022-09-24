@@ -873,6 +873,20 @@ o/p
 
 ### nth Highest Salary
 
+**A) USING DENSE_RANK()** 
+
+	WITH cte AS (
+		SELECT 
+			Salary,
+			DENSE_RANK() OVER (
+				ORDER BY Salary Desc
+			) as Rnk
+		FROM EmployeeSalary
+	)
+	SELECT Salary FROM cte WHERE Rnk = 4;
+
+**B) Finding Lowest of TOP n**
+	
 	CREATE FUNCTION Get_Nth_Highest_Salary(@n int)
 
 	RETURNS TABLE 
