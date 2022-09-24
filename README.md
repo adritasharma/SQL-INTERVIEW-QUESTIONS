@@ -818,7 +818,25 @@ O/P
 	FROM EmployeeSalary
 	WHERE Salary < (SELECT MAX(Salary)	FROM EmployeeSalary)
 
-**B) USING DENSE_RANK()**	
+**B) Finding Lowest of TOP 2**
+
+	SELECT TOP 2 Salary FROM EmployeeSalary ORDER BY Salary DESC
+
+o/p
+
+| Salary |
+| ------ |
+| 8500   |
+| 7000   |
+
+
+	WITH cte AS (
+		SELECT TOP 2 Salary FROM EmployeeSalary ORDER BY Salary DESC
+	)
+
+	SELECT Min(Salary) FROM cte;
+
+**C) USING DENSE_RANK()**	
 
 	SELECT 
 			Salary,
@@ -851,7 +869,36 @@ o/p
 
 </li>
 
+<li>
 
+### nth Highest Salary
+
+	CREATE FUNCTION Get_Nth_Highest_Salary(@n int)
+
+	RETURNS TABLE 
+	AS
+	RETURN 
+	(
+		WITH cte AS (
+		SELECT TOP (@n) Salary FROM EmployeeSalary ORDER BY Salary DESC
+		)
+
+		SELECT Min(Salary) as Salary FROM cte
+	)
+	GO
+
+Excecuting the fuunction :
+
+
+	SELECT * FROM Get_Nth_Highest_Salary(4)
+
+o/p
+
+| Salary | 
+| ------ | 
+| 4000   |
+
+</li>
 </ol>
 
 
