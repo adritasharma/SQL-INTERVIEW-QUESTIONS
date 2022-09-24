@@ -697,7 +697,7 @@ It is generated after the query has been executed. It shows the actual operation
 
 <li>
 
-**Find and Delete Duplicate records from a table**
+### Find and Delete Duplicate records from a table
 
 | CustomerId | FirstName | LastName    | Email                        |  
 | ---------- | --------- | ----------- | ---------------------------- | 
@@ -710,7 +710,7 @@ It is generated after the query has been executed. It shows the actual operation
 | 7          | Deepika   | Das         | das.deepika31@gmail.com      |
 
 
-### A) USING **SELF JOIN**
+**A) USING SELF JOIN**
 
 **Finding duplicate rows:**
 
@@ -731,7 +731,7 @@ It is generated after the query has been executed. It shows the actual operation
 		C2.CustomerId > C1.CustomerId
 
 
-### B) USING **GROUP BY**
+**B) USING GROUP BY**
 
 **Finding duplicate rows:**
 
@@ -753,7 +753,7 @@ It is generated after the query has been executed. It shows the actual operation
 			HAVING Count(*) > 1
 		)
 
-### C) USING **ROW_NUMBER()** & PARTITION BY -- Used when there is no Primary Key Id
+**C) USING ROW_NUMBER() & PARTITION BY -- Used when there is no Primary Key Id**
 
 **Finding duplicate rows:**
 
@@ -767,6 +767,18 @@ It is generated after the query has been executed. It shows the actual operation
         ) row_num
      FROM 
         CUSTOMER
+
+O/P
+
+| Email                        | row_num |
+| ---------------------------- | -------- |
+| adritasharma@gmail.com       | 1        |
+| ankitasarkar1994@gmail.com   | 1        |
+| anurag1994@gmail.com         | 1        |
+| chakraborty.sounak@gmail.com | 1        |
+| chakraborty.sounak@gmail.com | 2        |
+| das.deepika31@gmail.com      | 1        |
+| das.deepika31@gmail.com      | 2        |
 
 **Deleting duplicate rows:**	
 
@@ -787,7 +799,83 @@ It is generated after the query has been executed. It shows the actual operation
 </li>
 
 
+<li>
+
+### Second Highest Salary
+
+| EmployeeId | Salary |
+| ---------- | ------ |
+| 1          | 2500   |
+| 5          | 3000   |
+| 4          | 4000   |
+| 2          | 6500   |
+| 6          | 7000   |
+| 3          | 8500   |
+
+**A) USING INNER QUERY**
+
+	SELECT MAX(Salary)
+	FROM EmployeeSalary
+	WHERE Salary < (SELECT MAX(Salary)	FROM EmployeeSalary)
+
+**B) USING DENSE_RANK()**	
+
+	SELECT 
+			Salary,
+			DENSE_RANK() OVER (
+				ORDER BY Salary Desc
+			) as Rnk
+	FROM EmployeeSalary
+
+o/p
+
+| Salary | Rnk |
+| ------ | --- |
+| 8500   | 1   |
+| 7000   | 2   |
+| 6500   | 3   |
+| 4000   | 4   |
+| 3000   | 5   |
+| 2500   | 6   |
+
+
+	WITH cte AS (
+		SELECT 
+			Salary,
+			DENSE_RANK() OVER (
+				ORDER BY Salary Desc
+			) as Rnk
+		FROM EmployeeSalary
+	)
+	SELECT Salary FROM cte WHERE Rnk = 2;
+
+</li>
+
+
 </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## QUERY Performance Improvement
 
